@@ -1,11 +1,11 @@
-# SpecDeck Privacy Policy
+# SpecPort Privacy Policy
 
 Last updated: [DATE]
 
-SpecDeck ("the app") is a Confluence Cloud app published by [LEGAL NAME / BUSINESS NAME] ("we", "us"). This policy explains what data the app handles. Contact: [SUPPORT EMAIL].
+SpecPort ("the app") is a Confluence Cloud app published by [LEGAL NAME / BUSINESS NAME] ("we", "us"). This policy explains what data the app handles. Contact: [SUPPORT EMAIL].
 
 ## What the app does
-SpecDeck renders OpenAPI and Swagger specifications as interactive documentation inside Confluence pages, and can convert other apps' API-documentation macros into SpecDeck macros.
+SpecPort renders OpenAPI and Swagger specifications as interactive documentation inside Confluence pages, and can convert other apps' API-documentation macros into SpecPort macros.
 
 ## Data we process
 - **Macro configuration**: the spec text you paste, the attachment name, or the GitHub file URL you enter. Confluence stores this inside your page, like any other macro setting.
