@@ -1,10 +1,10 @@
-# SpecDeck Marketplace listing (final, paste-ready)
+# SpecPort Marketplace listing (final, paste-ready)
 
 ## App name
-SpecDeck: OpenAPI & Swagger Docs for Confluence
+SpecPort: OpenAPI & Swagger Docs for Confluence
 
 ## Tagline
-Interactive OpenAPI and Swagger docs on any Confluence page, with one-click migration from retiring API-doc macros.
+Move off retiring Swagger and OpenAPI macros in one click, then get interactive API docs on any Confluence page.
 
 ## Summary
 Turn OpenAPI 3 or Swagger 2 specs into interactive API docs on Confluence pages. Paste a spec, attach a file or link GitHub. Moving off a retiring Connect app? Convert its macros in one click.
@@ -13,7 +13,7 @@ Turn OpenAPI 3 or Swagger 2 specs into interactive API docs on Confluence pages.
 Live API docs from any source
 
 ## Highlight 1 summary
-Paste YAML or JSON, pick a page attachment, or paste a GitHub link. SpecDeck renders full Swagger UI with endpoints, schemas, examples and optional Try it out.
+Paste YAML or JSON, pick a page attachment, or paste a GitHub link. SpecPort renders full Swagger UI with endpoints, schemas, examples and optional Try it out.
 
 ## Highlight 1 caption
 A payments API rendered on a Confluence page, with every endpoint grouped by tag and ready to expand.
@@ -22,7 +22,7 @@ A payments API rendered on a Confluence page, with every endpoint grouped by tag
 Migrate old macros in one click
 
 ## Highlight 2 summary
-A space-settings tool finds OpenAPI and Swagger macros from other apps and converts them to SpecDeck. Each page gets a new version, so you can roll back anytime.
+A space-settings tool finds OpenAPI and Swagger macros from other apps and converts them to SpecPort. Each page gets a new version, so you can roll back anytime.
 
 ## Highlight 2 caption
 Scan a space, see every legacy API-doc macro by page, and convert them one page at a time.
@@ -31,13 +31,13 @@ Scan a space, see every legacy API-doc macro by page, and convert them one page 
 Built on Forge, validated as you edit
 
 ## Highlight 3 summary
-Check spec catches errors before you save. SpecDeck runs entirely on Atlassian's platform with no outside servers, and stores no personal data.
+Check spec catches errors before you save. SpecPort runs entirely on Atlassian's platform with no outside servers, and stores no personal data.
 
 ## Highlight 3 caption
 The macro editor validates the spec and shows the API title, version and endpoint count before you publish.
 
 ## More details
-SpecDeck brings interactive API reference docs into Confluence, where your team already writes.
+SpecPort brings interactive API reference docs into Confluence, where your team already writes.
 
 - Supports OpenAPI 3.x and Swagger 2.0, in YAML or JSON
 - Three sources: paste, page attachment or public GitHub file
@@ -61,7 +61,7 @@ First release: OpenAPI and Swagger docs plus one-click migration
 - Space-settings importer for legacy OpenAPI and Swagger macros, with page-version rollback
 
 ## Partner description
-Pratik Poddar builds focused, Forge-native apps that solve one job well for teams on Atlassian Cloud. SpecDeck, the first, puts interactive OpenAPI and Swagger docs in Confluence and helps teams move off retiring API-doc apps.
+Pratik Poddar builds focused, Forge-native apps that solve one job well for teams on Atlassian Cloud. SpecPort, the first, puts interactive OpenAPI and Swagger docs in Confluence and helps teams move off retiring API-doc apps.
 
 ## Keywords
 OpenAPI, Swagger, API documentation, REST API, Swagger UI, YAML, API reference, developer docs, Connect migration
