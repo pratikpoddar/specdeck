@@ -1,5 +1,5 @@
 // Finds OpenAPI/Swagger macros from other (mostly retiring Connect) apps in a space
-// and rewrites them as SpecDeck macros. Pure ADF helpers live here so they can be unit tested.
+// and rewrites them as SpecPort macros. Pure ADF helpers live here so they can be unit tested.
 export const OUR_MACRO = 'specdeck-openapi';
 const LEGACY = /swagger|openapi|open-api|oas/i;
 
@@ -34,7 +34,7 @@ function collectText(node) {
   return (node.content || []).map(collectText).join('\n');
 }
 
-/** Build a SpecDeck extension node. extensionKey format: <appId>/<environmentId>/static/<macroKey>. */
+/** Build a SpecPort extension node. extensionKey format: <appId>/<environmentId>/static/<macroKey>. */
 export function buildOurMacro(spec, { appId, environmentId }) {
   return {
     type: 'extension',
@@ -42,7 +42,7 @@ export function buildOurMacro(spec, { appId, environmentId }) {
       extensionType: 'com.atlassian.ecosystem',
       extensionKey: `${appId}/${environmentId}/static/${OUR_MACRO}`,
       parameters: {
-        extensionTitle: 'OpenAPI / Swagger Docs (SpecDeck)',
+        extensionTitle: 'OpenAPI / Swagger Docs (SpecPort)',
         guestParams: spec,
         localId: crypto.randomUUID(),
       },
