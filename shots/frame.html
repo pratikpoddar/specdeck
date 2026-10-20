@@ -20,6 +20,6 @@ document.body.style.setProperty('--cw',(q.get('cw')||560)+'px');document.body.st
 h.textContent=q.get('t');p.textContent=q.get('s');url.textContent=q.get('u')||'your-team.atlassian.net/wiki';
 const src=q.get('src'),kind=q.get('k');
 body.innerHTML = kind==='modal'
- ? `<div class="modal"><div class="box"><h3>SpecDeck: OpenAPI docs</h3><iframe id="f" src="${src}"></iframe></div></div>`
+ ? `<div class="modal"><div class="box"><h3>SpecPort: OpenAPI docs</h3><iframe id="f" src="${src}"></iframe></div></div>`
  : `<div class="page"><div class="crumb">${q.get('cr')||'Engineering / API'}</div><div class="title">${q.get('pt')}</div><div class="meta">Owned by Platform team · Last updated just now</div><iframe id="f" src="${src}"></iframe></div>`;
 </script></body></html>
