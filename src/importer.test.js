@@ -14,7 +14,7 @@ test('finds legacy macro and extracts url', () => {
   assert.deepEqual(hits[0].path, [1]);
   assert.equal(hits[0].spec.url, 'https://github.com/o/r/blob/main/api.yaml');
 });
-test('replaces with SpecDeck node', () => {
+test('replaces with SpecPort node', () => {
   const [h] = findLegacyMacros(doc);
   const out = replaceAt(doc, [{ path: h.path, node: buildOurMacro(h.spec, { appId: 'A', environmentId: 'E' }) }]);
   assert.equal(out.content[1].attrs.extensionKey, 'A/E/static/specdeck-openapi');
