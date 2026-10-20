@@ -3,8 +3,8 @@ from playwright.async_api import async_playwright
 B='http://localhost:8765/'
 def url(**k): return B+'frame.html?'+U.urlencode(k)
 SHOTS=[
- dict(name='1-viewer', src='build-viewer/index.html?m=v', pt='Payments API reference', t='Interactive API docs on any page', s='Paste YAML or JSON, use an attachment, or link a GitHub file. SpecDeck renders full Swagger UI with schemas, examples and Try it out.', act='viewer'),
- dict(name='2-importer', src='build-importer/index.html', pt='Space settings', cr='Engineering / Space settings', t='Migrate old Swagger macros in one click', s='Scan a space for OpenAPI and Swagger macros from retiring apps and convert them to SpecDeck. Every page keeps a version for rollback.', act='importer'),
+ dict(name='1-viewer', src='build-viewer/index.html?m=v', pt='Payments API reference', t='Interactive API docs on any page', s='Paste YAML or JSON, use an attachment, or link a GitHub file. SpecPort renders full Swagger UI with schemas, examples and Try it out.', act='viewer'),
+ dict(name='2-importer', src='build-importer/index.html', pt='Space settings', cr='Engineering / Space settings', t='Migrate old Swagger macros in one click', s='Scan a space for OpenAPI and Swagger macros from retiring apps and convert them to SpecPort. Every page keeps a version for rollback.', act='importer'),
  dict(name='3-config', src='build-config/index.html?m=cfg', k='modal', t='Check your spec before you publish', s='Validate OpenAPI 3 and Swagger 2 as you edit. Built on Forge: runs on Atlassian, with no outside servers and no personal data stored.', act='config'),
 ]
 async def act(page, a):
@@ -36,7 +36,7 @@ async def main():
       await pg.screenshot(path=f"out/{s['name']}-crop-raw.png"); await pg.close()
     # banner
     pg=await b.new_page(viewport={'width':1120,'height':548})
-    await pg.goto(url(w=1120,h=548,cw=470,hs=40,ps=19,src='build-viewer/index.html?m=v',pt='Payments API reference',t='SpecDeck: OpenAPI & Swagger Docs',s='Interactive API docs in Confluence, plus one-click migration from retiring Swagger apps. By Pratik Poddar.'))
+    await pg.goto(url(w=1120,h=548,cw=470,hs=40,ps=19,src='build-viewer/index.html?m=v',pt='Payments API reference',t='SpecPort: OpenAPI & Swagger Docs',s='Interactive API docs in Confluence, plus one-click migration from retiring Swagger apps. By Pratik Poddar.'))
     await pg.add_style_tag(content='.copy{padding:0 32px 0 48px}.copy img{width:60px;margin-bottom:20px}.win{margin-right:40px;height:476px!important}.page{padding:14px 20px}.title{font-size:20px}')
     await pg.wait_for_timeout(1500); await act(pg,'viewer')
     await pg.frames[1].evaluate("document.querySelector('.opblock-tag-section').scrollIntoView()"); await pg.wait_for_timeout(400)
