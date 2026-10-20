@@ -1,0 +1,67 @@
+modules:
+  macro:
+    - key: specdeck-openapi
+      resource: viewer
+      resolver:
+        function: resolver
+      title: OpenAPI / Swagger Docs (SpecDeck)
+      description: Render interactive OpenAPI 3 / Swagger 2 docs from a pasted spec, a page attachment, or a GitHub link.
+      category: embed
+      icon: resource:viewer;icon.svg
+      config:
+        resource: config
+        viewportSize: large
+        title: Configure API docs
+        openOnInsert: true
+        parameters:
+          - identifier: attachment
+            type: attachment
+      adfExport:
+        function: export
+      autoConvert:
+        matchers:
+          - pattern: https://raw.githubusercontent.com/*/*/*/*.yaml
+          - pattern: https://raw.githubusercontent.com/*/*/*/*.yml
+          - pattern: https://raw.githubusercontent.com/*/*/*/*.json
+          - pattern: https://raw.githubusercontent.com/*/*/*/*/*.yaml
+          - pattern: https://raw.githubusercontent.com/*/*/*/*/*.json
+          - pattern: https://github.com/*/*/blob/*/*.yaml
+          - pattern: https://github.com/*/*/blob/*/*.yml
+          - pattern: https://github.com/*/*/blob/*/*.json
+          - pattern: https://github.com/*/*/blob/*/*/*.yaml
+          - pattern: https://github.com/*/*/blob/*/*/*.json
+  confluence:spaceSettings:
+    - key: specdeck-importer
+      resource: importer
+      resolver:
+        function: resolver
+      title: Migrate API docs to SpecDeck
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: export
+      handler: index.exportHandler
+resources:
+  - key: viewer
+    path: static/viewer/build
+  - key: config
+    path: static/config/build
+  - key: importer
+    path: static/importer/build
+permissions:
+  scopes:
+    - read:page:confluence
+    - read:attachment:confluence
+    - write:page:confluence
+    - storage:app
+  external:
+    fetch:
+      backend:
+        - raw.githubusercontent.com
+  content:
+    styles:
+      - unsafe-inline
+app:
+  id: ari:cloud:ecosystem::app/REPLACE-WITH-forge-register-ID
+  runtime:
+    name: nodejs22.x
