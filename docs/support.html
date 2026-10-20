@@ -1,0 +1,58 @@
+<h1 id="specdeck-support">SpecPort Support</h1>
+<p>OpenAPI &amp; Swagger Docs for Confluence Cloud</p>
+<p><strong>Need help?</strong> Email
+<strong>pratik.phodu@gmail.com</strong> with the subject “SpecPort
+support”. We reply within 2 business days (India time, IST). Please
+include your Confluence site URL, the page link, and a screenshot or the
+error message.</p>
+<h2 id="getting-started">Getting started</h2>
+<ol type="1">
+<li>In the Confluence editor, type /OpenAPI and pick “OpenAPI / Swagger
+Docs (SpecPort)”.</li>
+<li>Choose a source: paste YAML or JSON, use a file attached to the
+page, or a public GitHub file link.</li>
+<li>Click “Check spec” to validate, then Save.</li>
+</ol>
+<p>Tip: pasting a GitHub link to a .yaml, .yml or .json file straight
+into a page turns it into SpecPort docs automatically.</p>
+<h2 id="moving-from-another-swagger-or-openapi-app">Moving from another
+Swagger or OpenAPI app</h2>
+<ol type="1">
+<li>Go to Space settings, then “Migrate API docs to SpecPort”.</li>
+<li>Click “Scan this space” to list pages that use other API-doc
+macros.</li>
+<li>Click “Convert” on each page. Each conversion saves a new page
+version, so you can roll back from page history.</li>
+</ol>
+<p>Macros marked “(manual)” couldn’t be mapped automatically. Re-add
+them with SpecPort, or email us and we’ll help.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong>“Couldn’t load the spec: GitHub returned 404”</strong>: The
+file must be public. Private repos are coming soon; for now, attach the
+file to the page.</p>
+<p><strong>“Attachment was not found on this page”</strong>: The file
+must be attached to the same page, and the name must match exactly,
+including the extension.</p>
+<p><strong>“This does not look like an OpenAPI 3 or Swagger 2
+document”</strong>: The file needs a top-level “openapi” or “swagger”
+field.</p>
+<p><strong>My GitHub change isn’t showing</strong>: GitHub specs are
+cached for up to 10 minutes.</p>
+<p><strong>“Try it out” is missing</strong>: An editor must switch it on
+in the macro settings, and it’s a paid feature. Calls go from your
+browser to your API, so that API must allow requests from your
+Confluence site (CORS).</p>
+<p><strong>PDF or Word export shows a table instead of the interactive
+docs</strong>: That’s expected. Exports print a Method, Path and Summary
+table of every endpoint.</p>
+<h2 id="plans">Plans</h2>
+<p>Free for up to 10 users, with every feature. Paid plans add one-click
+migration, “Try it out”, and soon private GitHub, GitLab and Bitbucket
+repos. Atlassian handles billing and trials under Apps, then Manage
+apps.</p>
+<h2 id="privacy-and-security">Privacy and security</h2>
+<p>SpecPort runs entirely on Atlassian Forge, stores no personal data,
+and only contacts raw.githubusercontent.com to fetch public spec files
+you link.</p>
+<h2 id="feature-requests-and-bugs">Feature requests and bugs</h2>
+<p>Email pratik.phodu@gmail.com. We read every one.</p>
