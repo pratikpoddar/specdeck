@@ -11,7 +11,11 @@ if [ -z "${FORGE_EMAIL:-}" ] || [ -z "${FORGE_API_TOKEN:-}" ]; then
   echo "Set FORGE_EMAIL and FORGE_API_TOKEN first (see top of script)."; exit 1
 fi
 forge whoami
-forge register --non-interactive "SpecPort" || forge register   # writes the real app id into manifest.yml
+if grep -q "REPLACE-WITH-forge-register-ID" manifest.yml; then
+  forge register --non-interactive "SpecPort" || forge register   # first run only: writes the real app id
+else
+  echo "App already registered: $(grep -oE 'app/[0-9a-f-]+' manifest.yml)"
+fi
 npm run setup
 npm run build
 forge lint
