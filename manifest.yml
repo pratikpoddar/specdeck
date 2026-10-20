@@ -4,7 +4,7 @@ modules:
       resource: viewer
       resolver:
         function: resolver
-      title: OpenAPI / Swagger Docs (SpecDeck)
+      title: OpenAPI / Swagger Docs (SpecPort)
       description: Render interactive OpenAPI 3 / Swagger 2 docs from a pasted spec, a page attachment, or a GitHub link.
       category: embed
       icon: resource:viewer;icon.svg
@@ -35,7 +35,7 @@ modules:
       resource: importer
       resolver:
         function: resolver
-      title: Migrate API docs to SpecDeck
+      title: Migrate API docs to SpecPort
       route: specdeck-importer
   function:
     - key: resolver
