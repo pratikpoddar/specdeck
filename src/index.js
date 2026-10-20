@@ -119,7 +119,7 @@ resolver.define('convertPage', async ({ payload, context }) => {
       method: 'PUT', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: page.id, status: 'current', title: page.title,
         body: { representation: 'atlas_doc_format', value: JSON.stringify(replaceAt(adf, reps)) },
-        version: { number: page.version.number + 1, message: 'Migrated API docs to SpecDeck' } }),
+        version: { number: page.version.number + 1, message: 'Migrated API docs to SpecPort' } }),
     });
     if (!put.ok) throw new Error(`Update failed (${put.status}).`);
     return { ok: true, converted: reps.length };
