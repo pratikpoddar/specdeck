@@ -2,6 +2,7 @@ import Resolver from '@forge/resolver';
 import api, { route, fetch, assumeTrustedRoute } from '@forge/api';
 import { kvs } from '@forge/kvs';
 import { toRawUrl, parseSpec, listEndpoints } from './spec.js';
+import { isLicensed, PAID_MESSAGE } from './license.js';
 
 const CACHE_TTL_MS = 10 * 60 * 1000;
 
@@ -42,7 +43,7 @@ resolver.define('getSpec', async ({ payload, context }) => {
   try {
     const config = { ...(context.extension?.config || {}), ...(payload?.config || {}) };
     if (context.extension?.autoConvertLink && !config.url) { config.url = context.extension.autoConvertLink; config.source = 'url'; }
-    return { ok: true, spec: await loadSpec(config, context) };
+    return { ok: true, spec: await loadSpec(config, context), licensed: isLicensed(context) };
   } catch (e) {
     return { ok: false, error: e.message };
   }
@@ -106,6 +107,7 @@ resolver.define('scanSpace', async ({ context }) => {
 
 resolver.define('convertPage', async ({ payload, context }) => {
   try {
+    if (!isLicensed(context)) return { ok: false, error: PAID_MESSAGE };
     const res = await api.asUser().requestConfluence(route`/wiki/api/v2/pages/${payload.pageId}?body-format=atlas_doc_format`);
     const page = await res.json();
     const adf = JSON.parse(page.body.atlas_doc_format.value);
