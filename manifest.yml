@@ -65,3 +65,5 @@ app:
   id: ari:cloud:ecosystem::app/REPLACE-WITH-forge-register-ID
   runtime:
     name: nodejs22.x
+  licensing:
+    enabled: true
