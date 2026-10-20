@@ -23,5 +23,5 @@ forge deploy -e development
 APP_UUID=$(grep -oE 'ari:cloud:ecosystem::app/[0-9a-f-]+' manifest.yml | sed 's#.*/##')
 forge variables set -e development APP_UUID "$APP_UUID"
 forge deploy -e development
-forge install --site "$SITE" --product confluence -e development --non-interactive
+forge install --site "$SITE" --product confluence -e development --non-interactive || forge install --site "$SITE" --product confluence -e development --non-interactive --upgrade
 echo "Done. Open https://$SITE/wiki, edit a page and type /SpecPort."
