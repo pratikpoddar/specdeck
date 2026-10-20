@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;width:var(--w);height:var(--h);overflow:hidden;background:linear-gradient(135deg,#1D3E8F 0%,#0E8C8A 100%);display:flex;align-items:center}
+.copy{width:var(--cw);padding:0 56px 0 72px;color:#fff}.copy img{width:72px;border-radius:16px;margin-bottom:28px}
+.copy h1{font-size:var(--hs);line-height:1.1;margin:0 0 20px;font-weight:700}.copy p{font-size:var(--ps);line-height:1.45;margin:0;opacity:.9}
+.win{flex:1;height:calc(var(--h) - 112px);margin-right:56px;background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.35);overflow:hidden;display:flex;flex-direction:column}
+.bar{height:40px;background:#F1F2F4;border-bottom:1px solid #DCDFE4;display:flex;align-items:center;padding:0 14px;gap:7px}.bar i{width:12px;height:12px;border-radius:50%;background:#DCDFE4;display:block}
+.bar span{margin-left:16px;font-size:13px;color:#626F86}
+.page{flex:1;padding:22px 34px;overflow:hidden;display:flex;flex-direction:column}
+.crumb{font-size:13px;color:#626F86;margin-bottom:6px}.title{font-size:28px;font-weight:600;color:#172B4D;margin:0 0 6px}.meta{font-size:13px;color:#626F86;margin-bottom:14px}
+iframe{border:1px solid #DCDFE4;border-radius:6px;flex:1;width:100%}
+.modal{flex:1;background:rgba(9,30,66,.45);display:flex;align-items:center;justify-content:center}
+.modal .box{width:78%;height:88%;background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden}
+.modal h3{margin:0;padding:18px 20px 4px;font-size:20px;color:#172B4D}.modal iframe{border:0}
+</style></head><body><div class="copy"><img src="logo-144.png"><h1 id="h"></h1><p id="p"></p></div>
+<div class="win"><div class="bar"><i></i><i></i><i></i><span id="url"></span></div><div id="body" style="flex:1;display:flex;flex-direction:column"></div></div>
+<script>
+const q=new URLSearchParams(location.search);const W=+q.get('w'),H=+q.get('h');
+document.body.style.setProperty('--w',W+'px');document.body.style.setProperty('--h',H+'px');
+document.body.style.setProperty('--cw',(q.get('cw')||560)+'px');document.body.style.setProperty('--hs',(q.get('hs')||52)+'px');document.body.style.setProperty('--ps',(q.get('ps')||24)+'px');
+h.textContent=q.get('t');p.textContent=q.get('s');url.textContent=q.get('u')||'your-team.atlassian.net/wiki';
+const src=q.get('src'),kind=q.get('k');
+body.innerHTML = kind==='modal'
+ ? `<div class="modal"><div class="box"><h3>SpecDeck: OpenAPI docs</h3><iframe id="f" src="${src}"></iframe></div></div>`
+ : `<div class="page"><div class="crumb">${q.get('cr')||'Engineering / API'}</div><div class="title">${q.get('pt')}</div><div class="meta">Owned by Platform team · Last updated just now</div><iframe id="f" src="${src}"></iframe></div>`;
+</script></body></html>
