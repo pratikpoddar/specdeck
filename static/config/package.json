@@ -1,5 +1,5 @@
 {
-  "name": "specdeck-config",
+  "name": "specport-config",
   "private": true,
   "type": "module",
   "scripts": { "build": "vite build" },
