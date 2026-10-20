@@ -13,7 +13,7 @@ function App() {
       const hasSource = config.specText || config.url || config.attachment || ctx.extension?.autoConvertLink;
       if (!hasSource) return setState({ empty: true });
       const res = await invoke('getSpec', {});
-      setState(res.ok ? { spec: res.spec, tryIt: !!config.tryItOut } : { error: res.error });
+      setState(res.ok ? { spec: res.spec, tryIt: !!config.tryItOut && res.licensed !== false } : { error: res.error });
     })().catch(e => setState({ error: e.message }));
   }, []);
 
