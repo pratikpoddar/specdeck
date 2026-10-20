@@ -10,4 +10,4 @@ export function isLicensed(context) {
 }
 // Free forever: rendering from paste, attachment, public GitHub; PDF export; scanning for legacy macros.
 // Paid: one-click conversion (importer), "Try it out", and (coming) private repos.
-export const PAID_MESSAGE = 'This is a paid SpecDeck feature. A site admin can start a free trial from Apps > Manage apps.';
+export const PAID_MESSAGE = 'This is a paid SpecPort feature. A site admin can start a free trial from Apps > Manage apps.';
