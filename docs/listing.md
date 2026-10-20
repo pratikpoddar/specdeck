@@ -1,11 +1,11 @@
 # Marketplace listing copy
 
-**App name:** SpecDeck: OpenAPI & Swagger Docs for Confluence
+**App name:** SpecPort: OpenAPI & Swagger Docs for Confluence
 
 **Tagline (≤ 80 chars):** Interactive OpenAPI docs in Confluence. Forge-native, one-click migration.
 
 **Summary:**
-Turn any OpenAPI 3 or Swagger 2 spec into interactive API documentation on a Confluence page. Paste it, attach it, or drop in a GitHub link. Moving off a retiring Connect Swagger app? SpecDeck converts those macros for you in one click.
+Turn any OpenAPI 3 or Swagger 2 spec into interactive API documentation on a Confluence page. Paste it, attach it, or drop in a GitHub link. Moving off a retiring Connect Swagger app? SpecPort converts those macros for you in one click.
 
 ## Highlights
 1. **Docs from any source.** Paste YAML or JSON, use a page attachment, or paste a GitHub link and it becomes live docs automatically.
