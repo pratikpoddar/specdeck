@@ -10,8 +10,8 @@ function Importer() {
     setDone(d => ({ ...d, [id]: r.ok ? `✓ ${r.converted} converted` : r.error })); };
   return (
     <div style={{ padding: 16, maxWidth: 800 }}>
-      <h2>Migrate API docs to SpecDeck</h2>
-      <p>Finds OpenAPI/Swagger macros from other apps in this space and replaces them with SpecDeck, keeping the same spec. Each page gets a new version, so you can roll back from page history.</p>
+      <h2>Migrate API docs to SpecPort</h2>
+      <p>Finds OpenAPI/Swagger macros from other apps in this space and replaces them with SpecPort, keeping the same spec. Each page gets a new version, so you can roll back from page history.</p>
       <button onClick={run} style={{ padding: '6px 12px', background: '#0C66E4', color: '#fff', border: 0, borderRadius: 4 }}>{scan?.busy ? 'Scanning…' : 'Scan this space'}</button>
       {scan && !scan.busy && !scan.ok && <p style={{ color: '#AE2E24' }}>{scan.error}</p>}
       {scan?.ok && (scan.results.length === 0 ? <p>No other API-doc macros found.</p> :
