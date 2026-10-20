@@ -36,6 +36,7 @@ modules:
       resolver:
         function: resolver
       title: Migrate API docs to SpecDeck
+      route: specdeck-importer
   function:
     - key: resolver
       handler: index.handler
