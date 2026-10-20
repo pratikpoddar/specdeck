@@ -1,4 +1,4 @@
-# SpecDeck: OpenAPI / Swagger docs for Confluence Cloud
+# SpecPort: OpenAPI / Swagger docs for Confluence Cloud
 
 A Forge app that replaces the stale Connect API-doc macros. Insert `/OpenAPI` on a page, or just paste a GitHub spec link and it auto-converts.
 
@@ -21,7 +21,7 @@ Tests: `npm test`. `forge lint` needs a login, so run it after step 1.
 
 ## MVP roadmap, in order
 1. **Private GitHub, GitLab and Bitbucket repos.** Add an OAuth provider (Forge `providers`) and branch selection. This is the #1 paid feature.
-2. **Importer for the dead apps.** A space-settings page that scans pages for the old Connect macros (Open API (Swagger) Integration, Visualize OpenAPI, Swagger UI for Confluence) and rewrites them to SpecDeck with the same spec. This is the wedge: those customers lose support on 31 Jan 2027.
+2. **Importer for the dead apps.** A space-settings page that scans pages for the old Connect macros (Open API (Swagger) Integration, Visualize OpenAPI, Swagger UI for Confluence) and rewrites them to SpecPort with the same spec. This is the wedge: those customers lose support on 31 Jan 2027.
 3. **Redoc layout toggle** and dark mode.
 4. **Spec diff on update:** show what changed since the page was last published (new and removed endpoints).
 5. **Rovo agent:** answer "how do I call X?" from the specs on a page.
@@ -44,6 +44,6 @@ Tests: `npm test`. `forge lint` needs a login, so run it after step 1.
 - The Swagger UI bundle is about 1.5 MB. Consider lazy-loading or Redoc.
 
 ## Importer (v0.2)
-- Find it in Space settings, under **Migrate API docs to SpecDeck**. It scans pages for any macro whose key mentions swagger or openapi, then converts them in one click and adds a page version.
+- Find it in Space settings, under **Migrate API docs to SpecPort**. It scans pages for any macro whose key mentions swagger or openapi, then converts them in one click and adds a page version.
 - After `forge register`, run `forge variables set APP_UUID <uuid from manifest app id>`.
 - To verify: install the old Connect apps on a dev site and check their real macro keys and parameter names. Macros it can't map show as "(manual)".
